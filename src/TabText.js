@@ -17,7 +17,6 @@ let juros = Number(form.RM/100)
   for (let i = 1; i < Number(form.prazo)+1; i++) {
       meses.push(i)
   }
-
  return (
         <div className='tabela-header'>
             <div>
@@ -27,7 +26,7 @@ let juros = Number(form.RM/100)
 
             <div>
               <div>Saldo inicial</div>              
-              {liberar ? <Saldoinicial meses={meses}/>: null }               
+              {liberar ? <Saldoinicial meses={meses} im={im} ii={ii} juros={juros}/>: null }               
             </div>
 
             <div>
@@ -45,10 +44,10 @@ let juros = Number(form.RM/100)
               {liberar ? <Investimentomensal meses={meses} im={im} ii={ii}/> : null }                            
             </div>
 
-            <div>
+            {/* <div>
               <div>Investimento adicional</div>
               {liberar ? <Investimentoadd meses={meses}/>   : null }                      
-            </div>
+            </div> */}
 
             <div>
               <div>Saldo final</div>

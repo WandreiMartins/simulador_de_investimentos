@@ -2,32 +2,42 @@ import React from 'react'
 
 const Juros = ({meses, im, ii, juros}) => {
     let arrayjuros = []
+    let arrayjurosString = []
     let Auxiliar01 = 0
-    let Auxiliar02 = []
     let Auxiliar03 = 0
-    let arrayjuroscom = []
-    Auxiliar03 = im
-    meses.forEach(() => {
-        //usar if pra ii
-        Auxiliar03 = Auxiliar03+Auxiliar03*juros
-        Auxiliar01 = Auxiliar03 + Auxiliar01
-        arrayjuros.push(Number(Auxiliar01.toFixed(2)))
-    })
-  
-   arrayjuroscom =  [0, ...arrayjuros]
-  
-   for(let i = 0; i < arrayjuros.length; i++){
-        if(meses[i] === 1){
-            Auxiliar02.push(arrayjuros[i]-im)
+    
+    meses.forEach((mes) => {
+        if(ii === ''){
+            arrayjuros.push('')
+
+        }else if(mes === 1 && ii !=''){
+            Auxiliar03 = ii*juros
+            Auxiliar01 = ii*juros+im+ii
+            arrayjuros.push(Number(Auxiliar03.toFixed(2)))
+        }else if (mes === 2){
+                       
+            Auxiliar03 = Auxiliar01*juros
+            Auxiliar01 = ((Auxiliar01-im+Auxiliar03)+im*mes)
+
+            arrayjuros.push(Number(Auxiliar03.toFixed(2)))
         }else{
-            Auxiliar02.push(Number((arrayjuros[i]-arrayjuroscom[i]-im).toFixed(2)))
+            Auxiliar03 = Auxiliar01*juros
+            Auxiliar01 = ((Auxiliar01-((im*mes)-(im))+Auxiliar03)+im*mes)
+
+            arrayjuros.push(Number(Auxiliar03.toFixed(2)))
         }
-    }
+    
+    })
+
+    arrayjuros.forEach((juros)=>{
+        juros = juros.toLocaleString('pt-BR', { style: 'currency', currency: 'brl' })
+        arrayjurosString.push(juros)
+       })
 
 return (
     <>        
-        {Auxiliar02.map((Auxiliar02) => (
-        <div key={Auxiliar02}>{Auxiliar02}</div>
+        {arrayjurosString.map((juros) => (
+        <div key={juros}>{juros}</div>
     ))}
     </>
   )

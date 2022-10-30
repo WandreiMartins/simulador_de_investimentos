@@ -20,8 +20,8 @@ function App() {
     RM:'1'
   })
  
-  console.log(aparecer)
-  console.log(form)
+  // console.log(aparecer)
+  // console.log(form)
   
   
   return (
