@@ -19,10 +19,7 @@ function App() {
     prazo:'12',
     RM:'1'
   })
- 
-  // console.log(aparecer)
-  // console.log(form)
-  
+   
   
   return (
     <div className="App">

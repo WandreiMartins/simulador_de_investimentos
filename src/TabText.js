@@ -9,6 +9,10 @@ import Investimentoadd from './tabela/Investimentoadd'
 
 const TabText = ({form, liberar}) => {
 
+  // form.RM.string.replace(/,?/g,". ")
+// console.log(form.RM.replace(/,/g,"."))
+// console.log(form.RM.replace(/[^0-9,]+/g,''))
+
 let meses = []
 let ii = Number(form.II)
 let im = Number(form.IM)
