@@ -7,16 +7,16 @@ import Saldofinal from './tabela/Saldofinal'
 import Saldoinicial from './tabela/Saldoinicial'
 import Investimentoadd from './tabela/Investimentoadd'
 
-const TabText = ({form, liberar}) => {
+const TabText = ({form, liberar, boxesres, setBoxesres}) => {
 
   // form.RM.string.replace(/,?/g,". ")
 // console.log(form.RM.replace(/,/g,"."))
 // console.log(form.RM.replace(/[^0-9,]+/g,''))
 
 let meses = []
-let ii = Number(form.II)
-let im = Number(form.IM)
-let juros = Number(form.RM/100)
+let ii = Number(form.II.replace(/[^0-9]+/g,'') )
+let im = Number(form.IM.replace(/[^0-9]+/g,'') )
+let juros = Number(form.RM.replace(/[^0-9]+/g,'')/100 )
 
   for (let i = 1; i < Number(form.prazo)+1; i++) {
       meses.push(i)
@@ -55,7 +55,15 @@ let juros = Number(form.RM/100)
 
             <div>
               <div>Saldo final</div>
-              {liberar ? <Saldofinal meses={meses} im={im} ii={ii} juros={juros}/>   : null }                          
+              {liberar ? <Saldofinal 
+                          meses={meses} 
+                          im={im} 
+                          ii={ii} 
+                          juros={juros} 
+                          boxesres={boxesres}
+                          setBoxesres={setBoxesres}
+                          liberar={liberar}
+                          />   : null }                          
             </div>
 
         </div>

@@ -16,16 +16,31 @@ function App() {
   const [form, setForm] = React.useState({
     II:'1000',
     IM:'1000',
-    prazo:'12',
+    prazo:'24',
     RM:'1'
   })
-   
+  const [boxesres, setBoxesres]  = React.useState({
+    Investimento:'',
+    JurosRecebido:'',
+    total:''
+  })
+  
+
   
   return (
     <div className="App">
         <Header  form={form} setForm={setForm}/>
-        <Section aparecer={aparecer} setAparecer={setAparecer} setForm={setForm} form={form} liberar={liberar} setLiberar={setLiberar}/>
-        <Section2 form={form} liberar={liberar}/>
+        <Section 
+        aparecer={aparecer} 
+        setAparecer={setAparecer} 
+        setForm={setForm} 
+        form={form} liberar={liberar} 
+        setLiberar={setLiberar} 
+        boxesres={boxesres}
+        setBoxesres={setBoxesres}
+                     
+        />
+        <Section2 form={form} liberar={liberar} boxesres={boxesres} setBoxesres = {setBoxesres}/>
         
     </div>
   );

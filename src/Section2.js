@@ -1,7 +1,8 @@
 import React from 'react'
 import TabText from './TabText'
 
-const Section2 = ({form, liberar}) => {
+
+const Section2 = ({form, liberar, boxesres, setBoxesres}) => {
 const [blueV, setBlueV] = React.useState('blue');
 const [blueG, setBlueG] = React.useState('');
 
@@ -15,6 +16,9 @@ function Clicou (event){
         setBlueG('blue')
     }
 }
+
+
+
 return (
     <section>
         <div className='center'>
@@ -25,7 +29,12 @@ return (
                 </div>
 {/* ----------------------inicio tabela--------------------------- */}
                 <div className='tabela-s'>
-                    <TabText form={form} liberar={liberar}/>
+                    <TabText 
+                    form={form} 
+                    liberar={liberar} 
+                    boxesres = {boxesres}
+                    setBoxesres = {setBoxesres}
+                    />
                 </div>
 {/* ----------------------fim da tabela--------------------------- */}
 

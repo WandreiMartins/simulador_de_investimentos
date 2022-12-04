@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Btn = ({text, id, liberar, setLiberar, form, setForm, setAparecer, aparecer}) => {
+const Btn = ({text, id, liberar, setLiberar, form, setForm, setAparecer, aparecer, setBoxesres}) => {
 
     function handleClick(event){
       if(event.target.id === 'calcular' && form.II!=='' && form.IM !=='' && form.prazo!=='' && form.RM!==''){
@@ -26,7 +26,14 @@ const Btn = ({text, id, liberar, setLiberar, form, setForm, setAparecer, aparece
                 prazo:'',
                 RM:''
               })
-        setLiberar(false)     
+        setLiberar(false) 
+        setBoxesres({
+                     Investimento:'',
+                     JurosRecebido:'',
+                     total:'',
+        })
+
+           
     }
 }
 

@@ -15,10 +15,10 @@ const Header = ({form, setForm, aparecer}) => {
     <header>
       <form onSubmit={handleForm} action="">
           <div className='center'>
-              <Boxes  form={form} setForm={setForm} img={dinheiro3} value={form.II} text01='Investimento inicial' id='II' pre='R$'/>
-              <Boxes  form={form} setForm={setForm} img={dinheiro1} value={form.IM} text01='Investimento Mensal' id='IM' pre='R$'/>
-              <Boxes  form={form} setForm={setForm} img={barras} value={form.prazo} text01='Prazo (meses)' id='prazo' pre=''/>            
-              <Boxes  form={form} setForm={setForm} img={relatorio} value={form.RM}text01='Rentabilidade Mensal' id='RM' />
+              <Boxes  form={form} setForm={setForm} img={dinheiro3} value={form.II} text01='Investimento inicial' id='II' pre='R$' maxlength='17'/>
+              <Boxes  form={form} setForm={setForm} img={dinheiro1} value={form.IM} text01='Investimento Mensal' id='IM' pre='R$' maxlength='17'/>
+              <Boxes  form={form} setForm={setForm} img={barras} value={form.prazo} text01='Prazo (meses)' id='prazo' pre='' maxlength='3'/>            
+              <Boxes  form={form} setForm={setForm} img={relatorio} value={form.RM}text01='Rentabilidade Mensal' id='RM' maxlength='6'/>
           </div>
         </form>
     </header>
