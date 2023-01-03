@@ -7,7 +7,7 @@ import Saldofinal from './tabela/Saldofinal'
 import Saldoinicial from './tabela/Saldoinicial'
 import Investimentoadd from './tabela/Investimentoadd'
 
-const TabText = ({form, liberar, boxesres, setBoxesres}) => {
+const TabText = ({form, liberar, boxesres, setBoxesres, arrayFinal, setArrayFinal}) => {
 
   // form.RM.string.replace(/,?/g,". ")
 // console.log(form.RM.replace(/,/g,"."))
@@ -35,7 +35,17 @@ let juros = Number(form.RM.replace(/[^0-9]+/g,'')/100 )
 
             <div>
               <div>Juros</div>
-              {liberar ? <Juros meses={meses} im={im} ii={ii} juros={juros}/>: null }               
+              {liberar ? <Juros 
+                          meses={meses} 
+                          im={im} 
+                          ii={ii} 
+                          juros={juros}
+                          boxesres={boxesres}
+                          setBoxesres={setBoxesres}
+                          liberar={liberar}
+                          arrayFinal={arrayFinal}
+                          setArrayFinal={setArrayFinal}
+                          />: null }               
             </div>
 
             <div>
@@ -63,6 +73,8 @@ let juros = Number(form.RM.replace(/[^0-9]+/g,'')/100 )
                           boxesres={boxesres}
                           setBoxesres={setBoxesres}
                           liberar={liberar}
+                          arrayFinal={arrayFinal}
+                          setArrayFinal={setArrayFinal}
                           />   : null }                          
             </div>
 

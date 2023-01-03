@@ -2,7 +2,7 @@ import React from 'react'
 import TabText from './TabText'
 
 
-const Section2 = ({form, liberar, boxesres, setBoxesres}) => {
+const Section2 = ({form, liberar, boxesres, setBoxesres, arrayFinal, setArrayFinal}) => {
 const [blueV, setBlueV] = React.useState('blue');
 const [blueG, setBlueG] = React.useState('');
 
@@ -34,6 +34,8 @@ return (
                     liberar={liberar} 
                     boxesres = {boxesres}
                     setBoxesres = {setBoxesres}
+                    arrayFinal={arrayFinal}
+                    setArrayFinal={setArrayFinal}
                     />
                 </div>
 {/* ----------------------fim da tabela--------------------------- */}

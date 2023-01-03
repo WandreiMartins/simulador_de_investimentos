@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Saldofinal = ({meses, im, ii, juros, boxesres, setBoxesres, liberar}) => {
-  
+const Saldofinal = ({meses, im, ii, juros, boxesres, setBoxesres, liberar, arrayFinal, setArrayFinal}) => {
+  let numeroTotal
   let arraysf = []
   let arraysfString = []
   let Auxiliar01 = 0
@@ -32,24 +32,22 @@ const Saldofinal = ({meses, im, ii, juros, boxesres, setBoxesres, liberar}) => {
 
       arraysf.push(Number(Auxiliar02.toFixed(2)))
   }
+  return arraysf
 })
 
 arraysf.forEach((sf)=>{
   sf = sf.toLocaleString('pt-BR', { style: 'currency', currency: 'brl' })
   arraysfString.push(sf)
  })
- 
-// arraysfString.splice(0, arraysfString.length-1)
-React.useEffect(()=>{
-
-  if(liberar){
-    setBoxesres({...boxesres, total:arraysfString.pop()})
-  }
-}, [liberar])
-console.log(boxesres)
 
 
+ numeroTotal = arraysfString[arraysfString.length-1].replace(/[^0-9,.]+/g,'')
 
+ React.useEffect(()=>{  
+                 
+  setArrayFinal({...arrayFinal, arraySaldoFinal:numeroTotal})
+   
+ }, []) 
 
   return (
     <>        

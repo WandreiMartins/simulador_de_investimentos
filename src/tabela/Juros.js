@@ -1,16 +1,18 @@
 import React from 'react'
 
-const Juros = ({meses, im, ii, juros}) => {
+
+const Juros = ({meses, im, ii, juros, boxesres, setBoxesres, liberar, arrayFinal, setArrayFinal}) => {
     let arrayjuros = []
     let arrayjurosString = []
     let Auxiliar01 = 0
     let Auxiliar03 = 0
+    let jurosTotal
     
     meses.forEach((mes) => {
         if(ii === ''){
             arrayjuros.push('')
 
-        }else if(mes === 1 && ii !=''){
+        }else if(mes === 1 && ii !==''){
             Auxiliar03 = ii*juros
             Auxiliar01 = ii*juros+im+ii
             arrayjuros.push(Number(Auxiliar03.toFixed(2)))
@@ -26,13 +28,23 @@ const Juros = ({meses, im, ii, juros}) => {
 
             arrayjuros.push(Number(Auxiliar03.toFixed(2)))
         }
-    
-    })
+        return arrayjuros
+    }) 
 
     arrayjuros.forEach((juros)=>{
         juros = juros.toLocaleString('pt-BR', { style: 'currency', currency: 'brl' })
         arrayjurosString.push(juros)
        })
+
+
+       jurosTotal = arrayjurosString[arrayjurosString.length-1].replace(/[^0-9,.]+/g,'')  
+         
+       React.useEffect(()=>{  
+                 
+        setArrayFinal({...arrayFinal, arrayJuros:jurosTotal}) 
+         
+       }, []) 
+       
 
 return (
     <>        

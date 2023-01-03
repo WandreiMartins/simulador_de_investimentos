@@ -1,11 +1,11 @@
 import React from 'react'
 
-const BoxesRes = ({text}) => {
+const BoxesRes = ({text, resultado}) => {
   return (
     <div className='blueBox'> 
       <p>{text}</p>
          <div className='blueBoxSon'>
-            <span>R$</span><div>00000,00</div>
+            <span>R$</span><div>{resultado}</div>
           </div>  
     </div>
   )

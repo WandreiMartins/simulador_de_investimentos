@@ -28,9 +28,9 @@ const Btn = ({text, id, liberar, setLiberar, form, setForm, setAparecer, aparece
               })
         setLiberar(false) 
         setBoxesres({
-                     Investimento:'',
-                     JurosRecebido:'',
-                     total:'',
+                     Investimento:'0,00',
+                     JurosRecebido:'0,00',
+                     total:'0,00',
         })
 
            

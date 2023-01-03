@@ -25,8 +25,21 @@ function App() {
     total:''
   })
   
-
+// console.log(boxesres)
+const [arrayFinal, setArrayFinal]  = React.useState({
+  arrayJuros:'',
+  arraySaldoFinal:'',
   
+}) 
+console.log(arrayFinal)
+//  React.useEffect(()=>{  
+  
+//   setBoxesres({...boxesres, total:numeroTotal})
+//   console.log("ok")
+
+// }, [])
+
+
   return (
     <div className="App">
         <Header  form={form} setForm={setForm}/>
@@ -40,7 +53,14 @@ function App() {
         setBoxesres={setBoxesres}
                      
         />
-        <Section2 form={form} liberar={liberar} boxesres={boxesres} setBoxesres = {setBoxesres}/>
+        <Section2 
+        form={form} 
+        liberar={liberar} 
+        boxesres={boxesres} 
+        setBoxesres = {setBoxesres}
+        arrayFinal={arrayFinal}
+        setArrayFinal={setArrayFinal}
+        />
         
     </div>
   );
